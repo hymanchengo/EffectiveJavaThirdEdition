@@ -81,7 +81,7 @@ public static Boolean valueOf(boolean b) {
     依赖注入框架可被视为强大的服务提供程序。Java 6以来，平台包含了一个通用目的服务提供程序框架，java.util.ServiceLoader,
     所以你没必要，一般也不该自己写一个。JDBC没有使用ServiceLoader，因为前者早于后者。
      
- **只提供工厂方法的主要限制是没有public或protected构造函数的类不能被继承。
+  **只提供工厂方法的主要限制是没有public或protected构造函数的类不能被继承。
  
     比如，你不可能继承Collections框架的简便实现类。可以说是因祸得福，因为它鼓励程序员使用组合而不是继承。且正好是
     不可变类型需要的。
