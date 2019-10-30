@@ -108,7 +108,19 @@ public static Boolean valueOf(boolean b) {
     - create or newInstance,和instance或getInstance类似，除了这个方法确保每次都返回一个新实例，例如
         
         Object newArray = Array.newInstance(classObject, arrayLen);
-   
+    
+    - getType, 和getInstance类似，当工厂方法在一个不同的类中时使用。类型是工厂方法返回的对象类型。例如
+        
+        FileStore fs = Files.getFileStore(path);
+    - newType，和newInstance类似，但用在工厂方法在不同的类中的情况。类型是工厂方法返回的对象类型。例如
+        
+        BufferedReader br = Files.newBufferedReader(path);
+    - type，getType和newType的简洁替代，比如：
+        
+        List<Complaint> litany = Collections.list(legacyLitany);
+ 
+ 总结,静态工厂方法和公共构造函数各有他们的使用场景，需要努力理解他们的相对优势。静态工厂经常被首先考虑，所以避免
+ 不考虑使用静态方法就去使用反射提供公共构造函数。
     
     
    
